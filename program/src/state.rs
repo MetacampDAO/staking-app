@@ -36,12 +36,12 @@ impl UserStakeInfo {
     /**
         Here's how we determine the size of the data. In your UserStakeInfo in struct in state.rs, we have the following data.
 
-        pub is_initialized: bool,                 // 1 bit
-        pub token_account: Pubkey,                // 32 bits
-        pub stake_start_time: UnixTimestamp,      // 64 bits
-        pub last_stake_redeem: UnixTimestamp,     // 64 bits
-        pub user_pubkey: Pubkey,                  // 32 bits
-        pub stake_state: StakeState,              // 1 bit
+        pub is_initialized: bool,                 // 1 byte
+        pub token_account: Pubkey,                // 32 bytes
+        pub stake_start_time: UnixTimestamp,      // 64 bytes
+        pub last_stake_redeem: UnixTimestamp,     // 64 bytes
+        pub user_pubkey: Pubkey,                  // 32 bytes
+        pub stake_state: StakeState,              // 1 byte
     **/
     pub const SIZE: usize = 1 + 32 + 64 + 64 + 32 + 1;
 }
